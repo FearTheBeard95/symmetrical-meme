@@ -1,23 +1,22 @@
 import * as React from 'react';
 import { Text, View, StyleSheet } from 'react-native';
 import Constants from 'expo-constants';
+import store from './store';
 
 // You can import from local files
-import AssetExample from './components/AssetExample';
 
 // or any pure javascript modules available in npm
 import { Card } from 'react-native-paper';
+import { Provider } from 'react-redux';
+import DeckList from './components/DeckList';
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <Text style={styles.paragraph}>
-        Change code in the editor and watch it change on your phone! Save to get a shareable url.
-      </Text>
-      <Card>
-        <AssetExample />
-      </Card>
-    </View>
+    <Provider store={store}>
+      <View style={styles.container}>
+        <DeckList />
+      </View>
+    </Provider>
   );
 }
 
