@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import { connect } from 'react-redux';
-import { Card } from 'react-native-paper';
 import { gray, purple, white } from '../utils/colors';
 
 class DeckInfo extends Component {

@@ -9,6 +9,7 @@ import {
 import { connect } from 'react-redux';
 import { handleReceiveDecks } from '../actions';
 import { gray, purple } from '../utils/colors';
+import Deck from './Deck';
 import DeckInfo from './DeckInfo';
 
 class DeckList extends Component {
@@ -18,16 +19,18 @@ class DeckList extends Component {
   render() {
     const { decks } = this.props;
     return (
-      <ScrollView style={styles.container}>
-        <Text style={styles.title}>Mobile flash cards</Text>
-        {Object.keys(decks).map((id) => {
-          return (
-            <TouchableOpacity key={id}>
-              <DeckInfo id={id} key={id} />
-            </TouchableOpacity>
-          );
-        })}
-      </ScrollView>
+      <View>
+        <ScrollView style={styles.container}>
+          <Text style={styles.title}>Mobile flash cards</Text>
+          {Object.keys(decks).map((id) => {
+            return (
+              <TouchableOpacity key={id}>
+                <DeckInfo id={id} key={id} />
+              </TouchableOpacity>
+            );
+          })}
+        </ScrollView>
+      </View>
     );
   }
 }
